@@ -1,0 +1,151 @@
+/*================================RESET GLOBAL========================================*/
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+}
+/*================================BOTÃO========================================*/
+.btn-outline-pink {
+    --bs-btn-color: #dc358a;
+    --bs-btn-border-color: #dc358a;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #dc358a;
+    --bs-btn-hover-border-color: #dc358a;
+    --bs-btn-focus-shadow-rgb: 220, 53, 69;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #dc358a;
+    --bs-btn-active-border-color: #dc358a;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #dc358a;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #dc358a;
+    --bs-gradient: none;
+}
+/*================================GALERIA MANSORY=====================================*/
+.gallery-container{
+    column-count: 3;
+    column-gap: 15px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.gallery-item{   
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+    margin-bottom: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+.gallery-item:hover{
+    transform: scale(1.02); 
+}
+.gallery-item img{
+    width: 100%;
+    height: auto; 
+    display: block;
+}
+/*=================================LIGHTBOX=============================================*/
+.lightbox{
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+.lightbox.visible{
+    display: flex;
+}
+.lightbox-content-wrapper{
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+#lightbox-image{
+    max-width: 100%;
+    max-height: 90vh;
+    display: block;
+    margin: 0; 
+    pointer-events: auto;
+}
+.close-btn{
+    position: absolute;
+    top: 15px; 
+    right: 25px;
+    color: #fff;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1001;
+    pointer-events: auto;
+}
+.close-btn:hover,
+.close-btn:focus{
+    color: #ccc;
+    text-decoration: none;
+}
+.nav-btn{
+    cursor: pointer;
+    position: fixed; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 20px 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 4px;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    z-index: 1002;
+    pointer-events: auto;
+}
+.prev-btn{
+    left: 20px;
+}
+.next-btn{
+    right: 20px;
+}
+.nav-btn:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/*===================================REPONSIVIDADE==================================*/
+@media (max-width: 900px){
+    .gallery-container{
+        column-count: 2;
+    }
+}
+@media (max-width: 600px){
+    .gallery-container{
+        column-count: 1;
+    }
+}
+@media (max-width: 768px){
+    .close-btn{
+        top: 10px;
+        right: 15px;
+        font-size: 35px;
+    }
+    .nav-btn{
+        padding: 15px 18px;
+        font-size: 24px;
+        left: 10px;
+        right: 10px;
+    }
+}
